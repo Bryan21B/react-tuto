@@ -1,0 +1,5 @@
+{
+  "plugins": ["prettier-plugin-organize-attributes"],
+  "attributeGroups": ["$DEFAULT", "^data-"],
+  "attributeSort": "ASC"
+}
