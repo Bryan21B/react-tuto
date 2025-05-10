@@ -87,14 +87,18 @@ function App(props: AppProps) {
   const headingText = `${taskList?.length} ${tasksNoun} remaining`;
 
   return (
-    <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
+    <div className="">
+      <h1 className="text-7xl flex justify-center items-center mt-10 mb-5 font-bold">
+        TodoMatic
+      </h1>
       <Form addTask={addTask} />
-      <div className="filters btn-group stack-exception">{filterList}</div>
-      <h2 id="list-heading">{headingText}</h2>
+      <div className="flex justify-center items-center">{filterList}</div>
+      <h2 id="list-heading" className="flex justify-center items-center">
+        {headingText}
+      </h2>
       <ul
         role="list"
-        className="todo-list stack-large stack-exception"
+        className="mt-5 grid grid-flow-row auto-rows-max gap-5 justify-center"
         aria-labelledby="list-heading"
       >
         {taskList}

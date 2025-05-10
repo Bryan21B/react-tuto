@@ -1,3 +1,4 @@
+import { Button } from "./ui/button";
 import { useState } from "react";
 
 interface TodoProps {
@@ -32,64 +33,56 @@ function Todo({
   };
 
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="todo-label" htmlFor={id}>
+    <form className="" onSubmit={handleSubmit}>
+      <div className="">
+        <label className="" htmlFor={id}>
           New name for {name}
         </label>
         <input
           id={id}
-          className="todo-text"
+          className=""
           type="text"
           value={newName}
           onChange={handleChange}
         />
       </div>
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn todo-cancel"
-          onClick={() => setEditing(false)}
-        >
+      <div className="">
+        <Button type="button" className="" onClick={() => setEditing(false)}>
           Cancel
-          <span className="visually-hidden">renaming {name}</span>
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
+          <span className="sr-only">renaming {name}</span>
+        </Button>
+        <button type="submit" className="">
           Save
-          <span className="visually-hidden">new name for {name}</span>
+          <span className="sr-only">new name for {name}</span>
         </button>
       </div>
     </form>
   );
   const viewTemplate = (
-    <div className="stack-small">
-      <div className="c-cb">
+    <div className="">
+      <div className="">
         <input
           id={id}
           type="checkbox"
           defaultChecked={completed}
           onChange={() => toggleTaskCompleted(id)}
         />
-        <label className="todo-label" htmlFor={id}>
+        <label className="" htmlFor={id}>
           {name}
         </label>
       </div>
-      <div className="btn-group">
-        <button type="button" className="btn" onClick={() => setEditing(true)}>
-          Edit <span className="visually-hidden">{name}</span>
-        </button>
-        <button
-          type="button"
-          className="btn btn__danger"
-          onClick={() => deleteTask(id)}
-        >
-          Delete <span className="visually-hidden">{name}</span>
+      <div className="">
+        <Button type="button" className="" onClick={() => setEditing(true)}>
+          Edit <span className="sr-only">{name}</span>
+        </Button>
+        <button type="button" className="" onClick={() => deleteTask(id)}>
+          Delete <span className="sr-only">{name}</span>
         </button>
       </div>
     </div>
   );
 
-  return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
+  return <li className="">{isEditing ? editingTemplate : viewTemplate}</li>;
 }
 
 export default Todo;

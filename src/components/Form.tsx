@@ -20,24 +20,26 @@ const Form = ({ addTask }: FormProps) => {
     setName("");
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
+    <form onSubmit={handleSubmit} className="mb-3 p-5 bg-amber-400">
+      <h2 className="flex justify-center items-center">
+        <label htmlFor="new-todo-input" className="text-2xl">
           What needs to be done?
         </label>
       </h2>
-      <input
-        type="text"
-        id="new-todo-input"
-        className="input input__lg"
-        name="text"
-        autoComplete="off"
-        value={name}
-        onChange={handleChange}
-      />
-      <button type="submit" className="btn btn__primary btn__lg">
-        Add
-      </button>
+      <div className="flex justify-center items-center mt-3">
+        <input
+          type="text"
+          id="new-todo-input"
+          className="mr-4"
+          name="text"
+          autoComplete="off"
+          value={name}
+          onChange={handleChange}
+        />
+        <button type="submit" className="text-xl">
+          Add
+        </button>
+      </div>
     </form>
   );
 };

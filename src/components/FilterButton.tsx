@@ -9,13 +9,13 @@ const FilterButton = ({ name, isPressed, setFilter }: FilterButtonProps) => {
   return (
     <button
       type="button"
-      className="btn toggle-btn"
+      className="m-3"
       aria-pressed={isPressed}
       onClick={() => setFilter(name)}
     >
-      <span className="visually-hidden">Show </span>
+      <span className="sr-only">Show </span>
       <span>{name}</span>
-      <span className="visually-hidden"> tasks</span>
+      <span className="sr-only"> tasks</span>
     </button>
   );
 };
